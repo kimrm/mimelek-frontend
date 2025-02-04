@@ -35,8 +35,8 @@ export default function Task({ nouns, adjectives }) {
 
   return (
     <div className="px-4 py-6 w-full">
-      <div className="flex w-full rounded-xl justify-center items-center border border-dashed border-green-500 min-h-[100px] px-3 py-6">
-        <p className=" text-3xl sm:text-5xl md:text-7xl font-bold sm:mb-4 uppercase">
+      <div className="flex w-full rounded-xl justify-center items-center outline outline-white min-h-[100px] px-3 py-6 bg-neutral-100 shadow-lg dark:bg-neutral-800 mb-4 ">
+        <p className=" text-3xl sm:text-5xl md:text-7xl font-bold uppercase bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400">
           {task === "" ? "Trykk på knapp for første oppgave!" : task}
         </p>
       </div>

@@ -10,7 +10,7 @@ export default function Header() {
       <span className="text-5xl md:text-7xl">🎭</span>
       <p className="text-xl mt-6 max-w-prose text-neutral-800 dark:text-neutral-200">
         Velkommen til Mimelek!
-        <br /> Her kan du hurtig starte en mimelek-økt med familie eller venner.
+        <br /> Her kan du hurtig starte en mimelek-økt med familie og venner.
       </p>
     </div>
   );
