@@ -20,13 +20,12 @@ const sourGummy = Sour_Gummy({
 export const metadata = {
   title: "Mimelek.com - mimespill for hele familien",
   description:
-    "Mimelek - ordgenerator for miming. Star en mimelek økt med fine venner og en god dose humor.",
-  lang: "no"
+    "Mimelek - ordgenerator for miming. Star en mimelek økt med fine venner og en god dose humor."
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="no">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${sourGummy.variable} min-h-screen h-screen antialiased`}
       >
