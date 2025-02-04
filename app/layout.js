@@ -18,9 +18,9 @@ const sourGummy = Sour_Gummy({
 });
 
 export const metadata = {
-  title: "Mimelek.com",
+  title: "Mimelek.com - mimespill for hele familien",
   description:
-    "Mimelek - ordgenerator for mimelek. Star en mimelek økt med fine venner og en god dose humor.",
+    "Mimelek - ordgenerator for miming. Star en mimelek økt med fine venner og en god dose humor.",
   lang: "no"
 };
 
