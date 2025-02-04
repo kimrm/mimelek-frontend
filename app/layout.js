@@ -20,7 +20,8 @@ const sourGummy = Sour_Gummy({
 export const metadata = {
   title: "Mimelek.com",
   description:
-    "Mimelek - ordgenerator for mimelek. Star en mimelek økt med fine venner og en god dose humor."
+    "Mimelek - ordgenerator for mimelek. Star en mimelek økt med fine venner og en god dose humor.",
+  lang: "no"
 };
 
 export default function RootLayout({ children }) {
