@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import { CheckIcon } from "./CheckIcon";
 import { ArrowPathIcon } from "./ArrowPathIcon";
 
 export default function Task({ nouns, adjectives }) {
@@ -25,6 +24,7 @@ export default function Task({ nouns, adjectives }) {
       }
     });
     setWorkingNounsList(filteredNounsList);
+    setNounsList(filteredNounsList);
   };
 
   const resetWorkingAdjectivesList = () => {
@@ -40,6 +40,7 @@ export default function Task({ nouns, adjectives }) {
       }
     });
     setWorkingAdjectivesList(filteredAdjectivesList);
+    setAdjectivesList(filteredAdjectivesList);
   };
 
   const filterNounsList = () => {
