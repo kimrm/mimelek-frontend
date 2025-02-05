@@ -13,7 +13,7 @@ export default function Task({ nouns, adjectives }) {
   const [workingAdjectivesList, setWorkingAdjectivesList] = useState([]);
 
   const resetWorkingNounsList = () => {
-    const filteredNounsList = nounsList.filter((noun) => {
+    const filteredNounsList = nouns.filter((noun) => {
       if (difficultyMode === 1) {
         return noun.difficulty === "easy";
       } else if (difficultyMode === 2) {
@@ -28,7 +28,7 @@ export default function Task({ nouns, adjectives }) {
   };
 
   const resetWorkingAdjectivesList = () => {
-    const filteredAdjectivesList = adjectivesList.filter((adjective) => {
+    const filteredAdjectivesList = adjectives.filter((adjective) => {
       if (difficultyMode === 1) {
         return adjective.difficulty === "easy";
       } else if (difficultyMode === 2) {
@@ -43,7 +43,7 @@ export default function Task({ nouns, adjectives }) {
   };
 
   const filterNounsList = () => {
-    const filteredNounsList = workingNounsList.filter((noun) => {
+    const filteredNounsList = nounsList.filter((noun) => {
       if (difficultyMode === 1) {
         return noun.difficulty === "easy";
       } else if (difficultyMode === 2) {
@@ -58,7 +58,7 @@ export default function Task({ nouns, adjectives }) {
   };
 
   const filterAdjectivesList = () => {
-    const filteredAdjectivesList = workingAdjectivesList.filter((adjective) => {
+    const filteredAdjectivesList = adjectivesList.filter((adjective) => {
       if (difficultyMode === 1) {
         return adjective.difficulty === "easy";
       } else if (difficultyMode === 2) {
@@ -99,6 +99,11 @@ export default function Task({ nouns, adjectives }) {
     } else {
       setTask(`${adjektivForm} ${randomNoun.word}`);
     }
+
+    setNounsList(nounsList.filter((noun) => noun.id !== randomNoun.id));
+    setAdjectivesList(
+      adjectivesList.filter((adjective) => adjective.id !== randomAdjective.id)
+    );
 
     setWorkingNounsList(
       workingNounsList.filter((noun) => noun.id !== randomNoun.id)
