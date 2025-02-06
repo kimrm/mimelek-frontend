@@ -22,12 +22,6 @@ export default async function HomePage({ params }) {
   return (
     <div className="mx-auto h-full max-w-7xl text-center py-12 px-4 flex flex-col items-center justify-between">
       <Header dict={dict} />
-      {locale === "en" && (
-        <p className="bg-red-100 border-red-500 p-4 text-red-900 rounded-md max-w-prose">
-          English words currently being added! Please check back later and
-          refresh the page.
-        </p>
-      )}
       <Task dict={dict} nouns={nouns} adjectives={adjectives} />
       <Footer dict={dict} />
     </div>
