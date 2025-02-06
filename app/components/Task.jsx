@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { ArrowPathIcon } from "./ArrowPathIcon";
 
-export default function Task({ nouns, adjectives }) {
+export default function Task({ nouns, adjectives, dict }) {
   const [taskMode, setTaskMode] = useState(3);
   const [difficultyMode, setDifficultyMode] = useState(4);
   const [task, setTask] = useState("");
@@ -164,10 +164,10 @@ export default function Task({ nouns, adjectives }) {
             <ArrowPathIcon className="w-4 h-4" />
             <span className="uppercase text-xs tracking-wider">
               {taskMode === 1
-                ? "Substantiv"
+                ? dict.noun
                 : taskMode === 2
-                ? "Adjektiv"
-                : "Substantiv+adjektiv"}
+                ? dict.adjective
+                : `${dict.noun} & ${dict.adjective}`}
             </span>
           </button>
           <button
@@ -185,12 +185,12 @@ export default function Task({ nouns, adjectives }) {
             <ArrowPathIcon className="w-4 h-4" />
             <span className="uppercase text-xs tracking-wider">
               {difficultyMode === 1
-                ? "Lett"
+                ? dict.easy
                 : difficultyMode === 2
-                ? "Vanskeligere"
+                ? dict.medium
                 : difficultyMode === 3
-                ? "Vanskeligst"
-                : "Mix vanskelighetsgrad"}
+                ? dict.hard
+                : `Mix (${dict.difficulty})`}
             </span>
           </button>
         </div>
@@ -200,7 +200,7 @@ export default function Task({ nouns, adjectives }) {
       </div>
       <div className="flex w-full max-w-3xl mx-auto rounded-xl justify-center items-center outline outline-white min-h-[170px] px-3 py-6 bg-neutral-100 shadow-lg dark:bg-neutral-800 mb-4 ">
         <p className=" text-3xl sm:text-4xl md:text-5xl font-bold uppercase bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400">
-          {task === "" ? "Trykk på knapp for første oppgave!" : task}
+          {task === "" ? dict.buttonText : task}
         </p>
       </div>
 
@@ -208,7 +208,7 @@ export default function Task({ nouns, adjectives }) {
         onClick={getTask}
         className="rounded-lg border border-transparent bg-[#f9f9f9] dark:bg-[#1a1a1a] cursor-pointer transition-colors duration-150 hover:border-green-500 px-4 py-2 mt-4"
       >
-        {task === "" ? "Få første oppgave" : "Få ny oppgave"}
+        {task === "" ? dict.buttonTextOne : dict.buttonTextTwo}
       </button>
     </div>
   );

@@ -1,16 +1,15 @@
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Task from "./components/Task";
-import { fetchNouns, fetchAdjectives } from "./actions";
+import { redirect } from "next/navigation";
+import { headers } from "next/headers";
 
-export default async function Home() {
-  const nouns = await fetchNouns();
-  const adjectives = await fetchAdjectives();
-  return (
-    <div className="mx-auto h-full max-w-7xl text-center py-12 px-4 flex flex-col items-center justify-between">
-      <Header />
-      <Task nouns={nouns} adjectives={adjectives} />
-      <Footer />
-    </div>
-  );
+export default async function RootPage() {
+  const requestHeaders = await headers();
+  const acceptLanguage = requestHeaders.get("accept-language") || "";
+
+  const defaultLocale = "en";
+
+  const isNorwegian = acceptLanguage.startsWith("nb-NO");
+
+  const targetLocale = isNorwegian ? "no" : defaultLocale;
+
+  redirect(`/${targetLocale}`);
 }

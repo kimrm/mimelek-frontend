@@ -1,6 +1,6 @@
 import { Analytics } from "@vercel/analytics/react";
 import { Geist, Geist_Mono, Sour_Gummy } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,9 +17,14 @@ const sourGummy = Sour_Gummy({
   subsets: ["latin"]
 });
 
-export default async function RootLayout({ children }) {
+export async function generateStaticParams() {
+  return [{ lang: "en" }, { lang: "no" }];
+}
+
+export default async function RootLayout({ children, params }) {
+  const locale = (await params).lang;
   return (
-    <html lang="no">
+    <html lang={locale}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${sourGummy.variable} min-h-screen h-screen antialiased`}
       >
