@@ -20,6 +20,10 @@ const sourGummy = Sour_Gummy({
 export default async function RootLayout({ children }) {
   return (
     <html lang="no">
+      <head>
+        <link rel="alternate" hreflang="en" href="https://mimelek.com/en/" />
+        <link rel="alternate" hreflang="no" href="https://mimelek.com/no/" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${sourGummy.variable} min-h-screen h-screen antialiased`}
       >
