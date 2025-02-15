@@ -10,6 +10,6 @@ export default async function RootPage() {
   const isNorwegian = acceptLanguage.startsWith("nb-NO");
 
   const targetLocale = isNorwegian ? "no" : defaultLocale;
-
+  console.log("Hit RootPage");
   redirect(`/${targetLocale}`);
 }
