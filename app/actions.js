@@ -9,6 +9,7 @@ export async function fetchNouns(language = "no") {
       }
     }
   );
+
   const data = await response.json();
   return data.data;
 }
